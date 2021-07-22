@@ -1,0 +1,24 @@
+$primary: #461e7d;
+$darkprimary: #280a50;
+$blackprimary: #1c0639;
+
+$secondary: #fd6600;
+$complementary: #5738ff;
+$tertiary: #ff006e;
+
+$blue: #2cfef9;
+$green: #2afd95;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+) !default;
+
+//
+//
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';

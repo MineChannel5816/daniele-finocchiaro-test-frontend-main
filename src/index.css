@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@font-face {
+  font-family: AvenirBlack;
+  src: local('Avenir-Black') url('./fonts/Avenir-Black.ttf') format('truetype'),
+     Safari, Android, iOS  url('./fonts/Avenir-Black.svg#Avenir-Black')
+      format('svg'); /* Legacy iOS 
+}
+
+@font-face {
+  font-family: AvenirBook;
+  src: url('./fonts/Avenir-Book.ttf') format('truetype'),
+     Safari, Android, iOS  url('./fonts/Avenir-Book.svg#Avenir-Book')
+      format('svg'); Legacy iOs
+}
+
+@font-face {
+  font-family: AvenirLight;
+  src: local('Avenir-Light'), url('./fonts/Avenir-Light.eot');
+   Safari, Android, iOS url('./fonts/Avenir-Light.svg#Avenir-Light')
+      format('svg');  Legacy iOS
+}
+
+@font-face {
+  font-family: AvenirMedium;
+  src: url('./fonts/Avenir-Medium.ttf') format('truetype'),
+     Safari, Android, iOS  url('./fonts/Avenir-Medium.svg#Avenir-Medium')
+      format('svg');  Legacy iOS
+}
+
+@font-face {
+  font-family: mm;
+
+  src: url(http://themes.googleusercontent.com/static/fonts/monoton/v4/AKI-lyzyNHXByGHeOcds_w.woff);
+}
+ */
