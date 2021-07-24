@@ -1,52 +1,83 @@
 import React from 'react';
+import {
+  CategoryChooseMenu,
+  FilterMenu,
+  FilterMenuBrand,
+  FilterMenuLocation,
+  FilterMenuPower,
+  FilterMenuPowerType,
+  FilterMenuReviews,
+  FilterMenuTipology,
+} from './SideBarComponents';
+
+const categoryList = ['Riscaldamento', 'Casa e acqua', 'Casa', 'Acqua'];
+const FilterMenuOption = {
+  FilterMenuName: ['Disponibili', 'In Promozione'],
+  FilterMenuValue: ['Available', 'Promotion'],
+};
+
+const FilterMenuBrandOption = {
+  FilterMenuBrandName: ['Ariston', 'Baxi', 'Ariston'],
+  FilterMenuBrandValue: ['Ariston', 'Baxi', 'Ariston'],
+};
+
+const FilterMenuTipologyOption = {
+  FilterMenuTipologyName: ['A Condensazione', 'Camera Aperta', 'Camera Stagna'],
+  FilterMenuTipologyValue: ['ACondensazione', 'CameraAperta', 'CameraStagna'],
+};
+
+const FilterMenuPowerTypeOption = {
+  FilterMenuPowerTypeName: ['Elettrica', 'Metano'],
+  FilterMenuPowerTypeValue: ['Elettric', 'Methane'],
+};
+const FilterMenuPowerOption = {
+  FilterMenuPowerName: ['19.5', '24', '25', 'da 30 a 34'],
+  FilterMenuPowerValue: ['19.5', '24', '25', '>30'],
+};
+
+const FilterMenuLocationOption = {
+  FilterMenuLocationName: ['Esterno', 'Interno'],
+  FilterMenuLocationValue: ['Esterno', 'Interno'],
+};
 
 export function SideBar(props: {}) {
   return (
     <div className="flex flex-col m-24 border-r-2 border-gray-100 p-4 w-72">
-      <div>
-        <h4 className="text-base font-bold uppercase">Categorie</h4>
-        <ul>
-          <li>Riscaldamento</li>
-          <li>Casa e acqua</li>
-          <li>Casa</li>
-          <li>Acqua</li>
-        </ul>
-      </div>
-
+      <CategoryChooseMenu categoryList={categoryList} />
       <hr className="border my-3 opacity-50" />
-
-      <div className="flex-col flex">
-        <h3 className="text-base font-bold uppercase">Scegli Per</h3>
-
-        <label className="flex items-center my-1">
-          <input
-            type="checkbox"
-            value="Available"
-            className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
-          />
-          Disponibili
-        </label>
-
-        <label className="flex items-center my-1">
-          <input type="checkbox" value="Promotion " className="mr-2 " />
-          In Promozione
-          <span className="checkmark"></span>
-        </label>
-      </div>
-
-      <div className="flex-col flex">
-        <h3 className="text-base font-bold uppercase">Marche</h3>
-
-        <label className="flex items-center my-1">
-          <input type="checkbox" value="Available" className="mr-2 " />
-          Disponibili
-        </label>
-
-        <label className="flex items-center my-1">
-          <input type="checkbox" value="Promotion" className="mr-2 " />
-          In Promozione
-        </label>
-      </div>
+      <FilterMenu
+        FilterMenuName={FilterMenuOption.FilterMenuName}
+        FilterMenuValue={FilterMenuOption.FilterMenuValue}
+      />
+      <FilterMenuBrand
+        FilterMenuBrandName={FilterMenuBrandOption.FilterMenuBrandName}
+        FilterMenuBrandValue={FilterMenuBrandOption.FilterMenuBrandValue}
+      />
+      <FilterMenuTipology
+        FilterMenuTipologyName={FilterMenuTipologyOption.FilterMenuTipologyName}
+        FilterMenuTipologyValue={
+          FilterMenuTipologyOption.FilterMenuTipologyValue
+        }
+      />
+      <FilterMenuPowerType
+        FilterMenuPowerTypeName={
+          FilterMenuPowerTypeOption.FilterMenuPowerTypeName
+        }
+        FilterMenuPowerTypeValue={
+          FilterMenuPowerTypeOption.FilterMenuPowerTypeValue
+        }
+      />
+      <FilterMenuPower
+        FilterMenuPowerName={FilterMenuPowerOption.FilterMenuPowerName}
+        FilterMenuPowerValue={FilterMenuPowerOption.FilterMenuPowerValue}
+      />
+      <FilterMenuLocation
+        FilterMenuLocationName={FilterMenuLocationOption.FilterMenuLocationName}
+        FilterMenuLocationValue={
+          FilterMenuLocationOption.FilterMenuLocationValue
+        }
+      />
+      <FilterMenuReviews />
     </div>
   );
 }

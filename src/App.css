@@ -2,5 +2,5 @@ input[type='checkbox'] {
   -webkit-appearance: none;
 }
 input[type='checkbox']:checked {
-  background-image: red;
+  background-color: #5738ff;
 }
