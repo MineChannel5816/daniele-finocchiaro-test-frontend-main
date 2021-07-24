@@ -42,7 +42,7 @@ const FilterMenuLocationOption = {
 
 export function SideBar(props: {}) {
   return (
-    <div className="flex flex-col m-24 border-r-2 border-gray-100 p-4 w-72">
+    <div className="flex flex-col mx-24 border-r-2 border-gray-100 p-4 w-72">
       <CategoryChooseMenu categoryList={categoryList} />
       <hr className="border my-3 opacity-50" />
       <FilterMenu
