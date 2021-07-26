@@ -311,7 +311,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
       </label>
@@ -370,7 +370,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -383,7 +383,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
       </label>
@@ -429,7 +429,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -442,7 +442,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -455,7 +455,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
       </label>
@@ -488,7 +488,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -501,7 +501,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -514,7 +514,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
         <svg
@@ -527,7 +527,7 @@ export function FilterMenuReviews() {
             transform="translate(-4.25 -4.25)"
             fill="none"
             stroke="black"
-            stroke-width="1"
+            strokeWidth="1"
           />
         </svg>
       </label>
