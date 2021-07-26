@@ -1,4 +1,6 @@
+import _ from 'lodash';
 import React from 'react';
+import { v4 } from 'uuid';
 
 interface CategoryChooseMenu {
   categoryList: string[];
@@ -177,71 +179,24 @@ export function FilterMenuReviews() {
           value={5}
           className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
+        {_.times(5, () => {
+          return (
+            <svg
+              key={v4()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 42 42"
+              className="w-4 mx-1"
+              fill="#461E7D"
+            >
+              <path
+                id="Path_2755"
+                data-name="Path 2755"
+                d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
+                transform="translate(-4 -4)"
+              />
+            </svg>
+          );
+        })}
       </label>
       <label className="flex items-center my-1">
         <input
@@ -249,71 +204,41 @@ export function FilterMenuReviews() {
           value={4}
           className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
+        {_.times(4, () => {
+          return (
+            <svg
+              key={v4()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 42 42"
+              className="w-4 mx-1"
+              fill="#461E7D"
+            >
+              <path
+                id="Path_2755"
+                data-name="Path 2755"
+                d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
+                transform="translate(-4 -4)"
+              />
+            </svg>
+          );
+        })}
+        {_.times(1, () => {
+          return (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 19.5 19.5"
+              className="w-4 mx-1"
+            >
+              <path
+                d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
+                transform="translate(-4.25 -4.25)"
+                fill="none"
+                stroke="black"
+                strokeWidth="1"
+              />
+            </svg>
+          );
+        })}
       </label>
       <label className="flex items-center my-1">
         <input
@@ -321,71 +246,41 @@ export function FilterMenuReviews() {
           value={3}
           className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
+        {_.times(3, () => {
+          return (
+            <svg
+              key={v4()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 42 42"
+              className="w-4 mx-1"
+              fill="#461E7D"
+            >
+              <path
+                id="Path_2755"
+                data-name="Path 2755"
+                d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
+                transform="translate(-4 -4)"
+              />
+            </svg>
+          );
+        })}
+        {_.times(2, () => {
+          return (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 19.5 19.5"
+              className="w-4 mx-1"
+            >
+              <path
+                d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
+                transform="translate(-4.25 -4.25)"
+                fill="none"
+                stroke="black"
+                strokeWidth="1"
+              />
+            </svg>
+          );
+        })}
       </label>
       <label className="flex items-center my-1">
         <input
@@ -393,71 +288,41 @@ export function FilterMenuReviews() {
           value={2}
           className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
+        {_.times(2, () => {
+          return (
+            <svg
+              key={v4()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 42 42"
+              className="w-4 mx-1"
+              fill="#461E7D"
+            >
+              <path
+                id="Path_2755"
+                data-name="Path 2755"
+                d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
+                transform="translate(-4 -4)"
+              />
+            </svg>
+          );
+        })}
+        {_.times(3, () => {
+          return (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 19.5 19.5"
+              className="w-4 mx-1"
+            >
+              <path
+                d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
+                transform="translate(-4.25 -4.25)"
+                fill="none"
+                stroke="black"
+                strokeWidth="1"
+              />
+            </svg>
+          );
+        })}
       </label>
       <label className="flex items-center my-1">
         <input
@@ -465,71 +330,41 @@ export function FilterMenuReviews() {
           value={1}
           className="mr-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 42 42"
-          className="w-4 mx-1"
-          fill="#461E7D"
-        >
-          <path
-            id="Path_2755"
-            data-name="Path 2755"
-            d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
-            transform="translate(-4 -4)"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 19.5 19.5"
-          className="w-4 mx-1"
-        >
-          <path
-            d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
-            transform="translate(-4.25 -4.25)"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-          />
-        </svg>
+        {_.times(1, () => {
+          return (
+            <svg
+              key={v4()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 42 42"
+              className="w-4 mx-1"
+              fill="#461E7D"
+            >
+              <path
+                id="Path_2755"
+                data-name="Path 2755"
+                d="M35.431,33.585l-.492-3.015L45,20.2,31.123,18.077,25,5,18.877,18.077,5,20.2,15.062,30.538,12.692,45,25,38.169,37.277,45l-1.385-8.554"
+                transform="translate(-4 -4)"
+              />
+            </svg>
+          );
+        })}
+        {_.times(4, () => {
+          return (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 19.5 19.5"
+              className="w-4 mx-1"
+            >
+              <path
+                d="M18.694,17.863l-.222-1.357L23,11.84l-6.245-.955L14,5l-2.755,5.885L5,11.84l4.528,4.652L8.462,23,14,19.926,19.525,23,18.9,19.151"
+                transform="translate(-4.25 -4.25)"
+                fill="none"
+                stroke="black"
+                strokeWidth="1"
+              />
+            </svg>
+          );
+        })}
       </label>
     </div>
   );
