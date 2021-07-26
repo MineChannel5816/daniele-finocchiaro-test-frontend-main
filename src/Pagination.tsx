@@ -1,6 +1,6 @@
 import React, { BaseSyntheticEvent, useState } from 'react';
 
-import type { BoilerInfo } from './App';
+import type { BoilerInfo, ToastMessage } from './App';
 
 import classNames from 'classnames';
 
@@ -8,8 +8,11 @@ import { BoilerCard } from './BoilerCard';
 
 export interface BoilerCard {
   cart: BoilerInfo[];
+  comparisonList: BoilerInfo[];
   id: string;
   setToCart: (id: BoilerInfo[]) => void;
+  setToComparison: (id: BoilerInfo[]) => void;
+  handleToast: (props: ToastMessage) => void;
   discount: boolean;
   imageSrc: string;
   articleName: string;
@@ -24,7 +27,10 @@ export function Pagination(props: {
   pageLimit: number;
   dataLimit: number;
   cart: BoilerInfo[];
-  onClickItems: (val: BoilerInfo[]) => void;
+  comparisonList: BoilerInfo[];
+  onClickItemsHearts: (val: BoilerInfo[]) => void;
+  onClickItemsComparison: (val: BoilerInfo[]) => void;
+  handleToast: (props: ToastMessage) => void;
 }) {
   const pages = Math.max(1, Math.round(props.data.length / props.dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
@@ -80,7 +86,10 @@ export function Pagination(props: {
             let propsToCard: BoilerCard = {
               ...cardData,
               cart: props.cart,
-              setToCart: props.onClickItems,
+              comparisonList: props.comparisonList,
+              setToCart: props.onClickItemsHearts,
+              setToComparison: props.onClickItemsComparison,
+              handleToast: props.handleToast,
             };
 
             return <BoilerCard key={i} {...propsToCard} />;

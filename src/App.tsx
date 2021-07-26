@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import * as Blueprint from '@blueprintjs/core';
+import { Intent, Position, Toaster } from '@blueprintjs/core';
+
+import { v4 } from 'uuid';
 
 import './App.css';
 
@@ -14,7 +16,6 @@ import { Pagination } from './Pagination';
 
 import { SideBar } from './SideBar';
 
-import { v4 } from 'uuid';
 import { Footer } from './Footer';
 
 export interface BoilerInfo {
@@ -26,6 +27,11 @@ export interface BoilerInfo {
   numberStar: number;
   price: number;
   oldPrice?: number;
+}
+
+export interface ToastMessage {
+  message: string;
+  type: Intent;
 }
 
 const dataBoiler: BoilerInfo[] = [
@@ -212,37 +218,42 @@ const dataBoiler: BoilerInfo[] = [
 ];
 
 function App() {
-  let toaster: Blueprint.Toaster;
-  let refHandlers = (ref: Blueprint.Toaster) => {
+  let toaster: Toaster;
+  let refHandlers = (ref: Toaster) => {
     toaster = ref;
   };
 
-  let addToast = () => {
-    toaster.show({ message: 'Added!', intent: 'success' });
+  let addToast = (props: ToastMessage) => {
+    toaster.show({ message: props.message, intent: props.type });
   };
 
   const [cartItems, setCartItems] = useState<BoilerInfo[]>([]);
+  const [comparisonItems, setComparisonItems] = useState<BoilerInfo[]>([]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     console.log(cartItems, cartItems.length);
-  }, [cartItems]);
-
+    console.log(comparisonItems, comparisonItems.length);
+  }, [cartItems, comparisonItems]);
+ */
   return (
     <>
-      <Blueprint.Toaster position={Blueprint.Position.TOP} ref={refHandlers} />
+      <Toaster position={Position.TOP} ref={refHandlers} />
       <div className="flex mb-12">
         <SideBar />
         <Pagination
           data={dataBoiler}
           cart={cartItems}
-          onClickItems={setCartItems}
+          comparisonList={comparisonItems}
+          onClickItemsHearts={setCartItems}
+          onClickItemsComparison={setComparisonItems}
+          handleToast={addToast}
           pageLimit={3}
           dataLimit={12}
         />
       </div>
-      {cartItems.length > 0 ? <Footer cartItems={cartItems} /> : null}
-
-      {/* <TransactionEmissionPanel handleToast={addToast} /> */}
+      {comparisonItems.length > 0 ? (
+        <Footer comparisonItems={comparisonItems} />
+      ) : null}
     </>
   );
 }

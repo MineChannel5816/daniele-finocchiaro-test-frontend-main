@@ -27,9 +27,28 @@ export function BoilerCard(props: BoilerCard) {
     return found;
   }
 
+  function isInComparison(): boolean {
+    let found: boolean = false;
+    for (let i = 0; i < props.comparisonList.length; i++) {
+      if (props.comparisonList[i].id.includes(props.id)) {
+        found = true;
+        break;
+      }
+    }
+    return found;
+  }
+
   function removeItemCart(id: string) {
     props.setToCart(
       props.cart.filter(function (ele) {
+        return ele.id != id;
+      }),
+    );
+  }
+
+  function removeItemComparison(id: string) {
+    props.setToCart(
+      props.comparisonList.filter(function (ele) {
         return ele.id != id;
       }),
     );
@@ -52,9 +71,13 @@ export function BoilerCard(props: BoilerCard) {
           viewBox="0 0 19.902 17"
           className="w-5 m-3 cursor-pointer"
           onClick={() => {
-            if (!isInCart() || props.cart.length === 0)
+            if (!isInCart() || props.cart.length === 0) {
               props.setToCart([...props.cart, props]);
-            else removeItemCart(props.id);
+              props.handleToast({ message: 'Added', type: 'success' });
+            } else {
+              removeItemCart(props.id);
+              props.handleToast({ message: 'Removed', type: 'danger' });
+            }
           }}
         >
           <path
@@ -128,7 +151,21 @@ export function BoilerCard(props: BoilerCard) {
               </p>
               <input
                 type="checkbox"
-                value={5}
+                onClick={() => {
+                  if (!isInComparison() || props.comparisonList.length === 0) {
+                    props.setToComparison([...props.comparisonList, props]);
+                    props.handleToast({
+                      message: 'Added to Comparison',
+                      type: 'warning',
+                    });
+                  } else {
+                    removeItemComparison(props.id);
+                    props.handleToast({
+                      message: 'Removed to Comparison',
+                      type: 'warning',
+                    });
+                  }
+                }}
                 className="ml-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
               />
             </label>
