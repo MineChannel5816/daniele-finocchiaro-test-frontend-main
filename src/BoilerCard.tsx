@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
+import { v4 } from 'uuid';
 
 import type { BoilerCard } from './Pagination';
 
@@ -13,8 +14,27 @@ export function BoilerCard(props: BoilerCard) {
     'text-xl font-bold',
     props.discount ? 'text-orange-500' : 'text-indigo-800',
   );
+  /* FARE UNO USEEFFECT PER GLI ID E METTERE CHEI CUORI SI FANNO ROSSI SE ATTVO IL V4  */
 
-  /* FARE UNO USEEFFECT PER GLI ID E METTERE CHEI CUORI SI FANNO ROSSI SE ATTVO IL V4 CHE SI AGGIUNGE ONCLICK AD UN OGGETTO ~fare qui la gestione front end e su pagination l ogetto e la logica di passaggio delle informazioni sugli attuali~ */
+  function isInCart(): boolean {
+    let found: boolean = false;
+    for (let i = 0; i < props.cart.length; i++) {
+      if (props.cart[i].id.includes(props.id)) {
+        found = true;
+        break;
+      }
+    }
+    return found;
+  }
+
+  function removeItemCart(id: string) {
+    props.setToCart(
+      props.cart.filter(function (ele) {
+        return ele.id != id;
+      }),
+    );
+  }
+
   return (
     <div className="flex flex-col h-96 w-80 mx-3 my-4">
       <div className="flex top-0 z-10 items-center">
@@ -31,11 +51,16 @@ export function BoilerCard(props: BoilerCard) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 19.902 17"
           className="w-5 m-3 cursor-pointer"
+          onClick={() => {
+            if (!isInCart() || props.cart.length === 0)
+              props.setToCart([...props.cart, props]);
+            else removeItemCart(props.id);
+          }}
         >
           <path
             d="M18.352,1.452a5,5,0,0,0-7.048,0L9.852,2.9,8.4,1.452A4.984,4.984,0,0,0,1.352,8.5L2.8,9.952,9.852,17,16.9,9.952h0L18.352,8.5A5,5,0,0,0,18.352,1.452ZM16.69,6.838,15.238,8.29,9.873,13.655,4.487,8.29,3.035,6.838a2.641,2.641,0,0,1,1.851-4.5,2.547,2.547,0,0,1,1.851.778L8.19,4.566,9.852,6.228l1.662-1.662,1.452-1.452A2.633,2.633,0,1,1,16.69,6.838Z"
             transform="translate(0.1)"
-            fill="lightgray"
+            fill={isInCart() ? 'red' : 'lightgray'}
           />
         </svg>
       </div>
@@ -60,6 +85,7 @@ export function BoilerCard(props: BoilerCard) {
             {_.times(props.numberStar, () => {
               return (
                 <svg
+                  key={v4()}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 42 42"
                   className="w-4 mx-1"
@@ -77,6 +103,7 @@ export function BoilerCard(props: BoilerCard) {
             {_.times(5 - props.numberStar, () => {
               return (
                 <svg
+                  key={v4()}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 42 42"
                   className="w-4 mx-1"
