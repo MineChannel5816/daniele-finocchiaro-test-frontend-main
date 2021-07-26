@@ -225,6 +225,7 @@ export function FilterMenuReviews() {
         {_.times(1, () => {
           return (
             <svg
+              key={v4()}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.5 19.5"
               className="w-4 mx-1"
@@ -267,6 +268,7 @@ export function FilterMenuReviews() {
         {_.times(2, () => {
           return (
             <svg
+              key={v4()}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.5 19.5"
               className="w-4 mx-1"
@@ -309,6 +311,7 @@ export function FilterMenuReviews() {
         {_.times(3, () => {
           return (
             <svg
+              key={v4()}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.5 19.5"
               className="w-4 mx-1"
@@ -351,6 +354,7 @@ export function FilterMenuReviews() {
         {_.times(4, () => {
           return (
             <svg
+              key={v4()}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.5 19.5"
               className="w-4 mx-1"
