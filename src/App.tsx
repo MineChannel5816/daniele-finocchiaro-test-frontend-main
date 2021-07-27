@@ -251,9 +251,15 @@ function App() {
           dataLimit={12}
         />
       </div>
-      {comparisonItems.length > 0 ? (
-        <Footer comparisonItems={comparisonItems} />
-      ) : null}
+      {/* {comparisonItems.length == 0 ? ( */}
+      <Footer
+        cart={cartItems}
+        comparisonList={comparisonItems}
+        onClickItemsHearts={setCartItems}
+        onClickItemsComparison={setComparisonItems}
+        handleToast={addToast}
+      />
+      {/*  ) : null} */}
     </>
   );
 }

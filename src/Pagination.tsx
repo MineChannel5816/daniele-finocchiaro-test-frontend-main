@@ -9,6 +9,7 @@ import { BoilerCard } from './BoilerCard';
 export interface BoilerCard {
   cart: BoilerInfo[];
   comparisonList: BoilerInfo[];
+  windowComparison: boolean;
   id: string;
   setToCart: (id: BoilerInfo[]) => void;
   setToComparison: (id: BoilerInfo[]) => void;
@@ -87,6 +88,7 @@ export function Pagination(props: {
               ...cardData,
               cart: props.cart,
               comparisonList: props.comparisonList,
+              windowComparison: false,
               setToCart: props.onClickItemsHearts,
               setToComparison: props.onClickItemsComparison,
               handleToast: props.handleToast,
