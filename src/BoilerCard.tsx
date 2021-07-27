@@ -14,7 +14,6 @@ export function BoilerCard(props: BoilerCard) {
     'text-xl font-bold',
     props.discount ? 'text-orange-500' : 'text-indigo-800',
   );
-  /* FARE UNO USEEFFECT PER GLI ID E METTERE CHEI CUORI SI FANNO ROSSI SE ATTVO IL V4  */
 
   function isInCart(): boolean {
     let found: boolean = false;
@@ -47,7 +46,7 @@ export function BoilerCard(props: BoilerCard) {
   }
 
   function removeItemComparison(id: string) {
-    props.setToCart(
+    props.setToComparison(
       props.comparisonList.filter(function (ele) {
         return ele.id != id;
       }),
@@ -144,32 +143,37 @@ export function BoilerCard(props: BoilerCard) {
               );
             })}
           </div>
-          <div>
-            <label className="flex items-center my-1">
-              <p className="uppercase font-medium text-gray-400 mr-1">
-                Confronta
-              </p>
-              <input
-                type="checkbox"
-                onClick={() => {
-                  if (!isInComparison() || props.comparisonList.length === 0) {
-                    props.setToComparison([...props.comparisonList, props]);
-                    props.handleToast({
-                      message: 'Added to Comparison',
-                      type: 'warning',
-                    });
-                  } else {
-                    removeItemComparison(props.id);
-                    props.handleToast({
-                      message: 'Removed to Comparison',
-                      type: 'warning',
-                    });
-                  }
-                }}
-                className="ml-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
-              />
-            </label>
-          </div>
+          {!props.windowComparison ? (
+            <div>
+              <label className="flex items-center my-1">
+                <p className="uppercase font-medium text-gray-400 mr-1">
+                  Confronta
+                </p>
+                <input
+                  type="checkbox"
+                  onClick={() => {
+                    if (
+                      !isInComparison() ||
+                      props.comparisonList.length === 0
+                    ) {
+                      props.setToComparison([...props.comparisonList, props]);
+                      props.handleToast({
+                        message: 'Added to Comparison',
+                        type: 'warning',
+                      });
+                    } else {
+                      removeItemComparison(props.id);
+                      props.handleToast({
+                        message: 'Removed to Comparison',
+                        type: 'warning',
+                      });
+                    }
+                  }}
+                  className="ml-2 border-blueGray-200 border-2 w-6 h-6 cursor-pointer"
+                />
+              </label>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
