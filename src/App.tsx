@@ -10,6 +10,8 @@ import 'normalize.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 
+import faker from 'faker';
+
 import boiler from './assets/boiler.png';
 
 import { Pagination } from './Pagination';
@@ -22,11 +24,19 @@ export interface BoilerInfo {
   id: string;
   discount: boolean;
   imageSrc: string;
-  articleName: string;
+  articleBrand: string;
   articleDescription: string;
+  articleName: string;
   numberStar: number;
   price: number;
   oldPrice?: number;
+  discountAmount?: number;
+  installation: boolean;
+  tipology: string;
+  powerType: string;
+  locationType: string;
+  power: number;
+  available: boolean;
 }
 
 export interface ToastMessage {
@@ -34,188 +44,46 @@ export interface ToastMessage {
   type: Intent;
 }
 
-const dataBoiler: BoilerInfo[] = [
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-  {
-    id: v4(),
-    discount: true,
-    imageSrc: boiler,
-    articleName: 'Ariston',
-    articleDescription:
-      'Matis condens - Condensing Boiler 24 kW Methane - Indoor',
-    numberStar: 5,
-    price: 1350,
-    oldPrice: 1570,
-  },
-  {
-    id: v4(),
-    discount: false,
-    imageSrc: boiler,
-    articleName: 'Baxi',
-    articleDescription: 'Genus One Condensing Boiler - 24 kW',
-    numberStar: 2,
-    price: 960,
-  },
-];
+/* Function to Generate Random Data */
+function generateData() {
+  const BoilerInfo: BoilerInfo[] = new Array(60).fill({}).map(() => {
+    let prod = faker.commerce.product();
+    let prodDesc = prod + ' ' + faker.lorem.words();
+    let discount = faker.random.boolean();
+
+    let location = ['ext', 'int', 'ext/int'];
+    let powerType = ['electric', 'methane'];
+    let tipology = ['condensation', 'openCam', 'closeCam'];
+
+    let generate: BoilerInfo = {
+      articleBrand: faker.company.companyName(),
+      articleDescription: prodDesc,
+      articleName: prod,
+      discount: discount,
+      id: v4(),
+      imageSrc: boiler,
+      installation: faker.random.boolean(),
+      locationType: location[faker.random.number({ min: 0, max: 2 })],
+      price: Number(faker.finance.amount(620)),
+      numberStar: faker.random.number({ min: 1, max: 5 }),
+      power: faker.random.number({ min: 19, max: 34, precision: 0.5 }),
+      powerType: powerType[faker.random.number({ min: 0, max: 1 })],
+      tipology: tipology[faker.random.number({ min: 0, max: 2 })],
+      available: faker.random.boolean(),
+    };
+    if (discount) {
+      generate = {
+        ...generate,
+        oldPrice: Number(faker.finance.amount(620, generate.price)),
+        discountAmount: faker.random.number({ min: 10, max: 70 }),
+      };
+    }
+    return generate;
+  });
+  return BoilerInfo;
+}
+
+const dataBoiler: BoilerInfo[] = generateData();
 
 function App() {
   let toaster: Toaster;
