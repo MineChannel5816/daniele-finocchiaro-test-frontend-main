@@ -16,11 +16,19 @@ export interface BoilerCard {
   handleToast: (props: ToastMessage) => void;
   discount: boolean;
   imageSrc: string;
-  articleName: string;
+  articleBrand: string;
   articleDescription: string;
+  articleName: string;
   numberStar: number;
   price: number;
   oldPrice?: number;
+  discountAmount?: number;
+  installation: boolean;
+  tipology: string;
+  powerType: string;
+  locationType: string;
+  power: number;
+  available: boolean;
 }
 
 export function Pagination(props: {
@@ -81,7 +89,15 @@ export function Pagination(props: {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col">
+        <div className="text-indigo-600 font-medium flex flex-row-reverse mx-8">
+          <select name="order" className="text-indigo-600 font-medium">
+            <option value="bestReviews">migliori Recensioni</option>
+            <option value="bestPrices">migliori Prezzi</option>
+            <option value="discount">in Sconto</option>
+          </select>
+          Ordina per:
+        </div>
         <div className="flex justify-around flex-wrap">
           {getPaginatedData().map((cardData, i) => {
             let propsToCard: BoilerCard = {
@@ -97,9 +113,7 @@ export function Pagination(props: {
             return <BoilerCard key={i} {...propsToCard} />;
           })}
         </div>
-
         <hr className="mt-12 mx-6" />
-
         <div className="flex items-center justify-between">
           <button
             onClick={goToPreviousPage}
