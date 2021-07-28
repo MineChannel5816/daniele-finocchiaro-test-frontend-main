@@ -927,6 +927,7 @@ module.exports = {
     textAlign: ['responsive'],
     textColor: [
       'responsive',
+      'active',
       'dark',
       'group-hover',
       'focus-within',

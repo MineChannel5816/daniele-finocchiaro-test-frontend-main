@@ -7,7 +7,7 @@ import type { BoilerCard } from './Pagination';
 
 export function BoilerCard(props: BoilerCard) {
   const textUnderPrice = classNames(
-    'font-medium',
+    'font-bold text-sm',
     props.discount ? 'text-orange-500' : 'text-indigo-800',
   );
   const textPrice = classNames(
@@ -54,7 +54,12 @@ export function BoilerCard(props: BoilerCard) {
   }
 
   return (
-    <div className="flex flex-col h-96 w-80 mx-3 my-4">
+    <div
+      className={classNames(
+        'flex flex-col h-96 w-80 mx-3 my-4',
+        props.available ? 'opacity-60 pointer-events-none' : '',
+      )}
+    >
       <div className="flex top-0 z-10 items-center">
         <div
           className={classNames(
@@ -90,8 +95,10 @@ export function BoilerCard(props: BoilerCard) {
       <img src={props.imageSrc} className="w-full bg-gray-50 -my-10" />
 
       <div className="mt-10">
-        <p className="uppercase font-bold">{props.articleName}</p>
-        <p>{props.articleDescription}</p>
+        <p className="uppercase font-bold">{props.articleBrand}</p>
+        <p>
+          {props.articleName} | {props.articleDescription}
+        </p>
         <div className="flex items-center">
           <p className={textPrice}>{props.price.toFixed(2)} €</p>
           {props.oldPrice != null ? (
@@ -100,7 +107,13 @@ export function BoilerCard(props: BoilerCard) {
             </p>
           ) : null}
         </div>
-        <p className={textUnderPrice}>Sopralluogo e installazione inclusi</p>
+        {props.installation ? (
+          <p className={textUnderPrice}>Sopralluogo e installazione inclusi</p>
+        ) : (
+          <p className={textUnderPrice}>
+            Sopralluogo e installazione non inclusi
+          </p>
+        )}
         <hr className="my-2" />
         <div className="flex justify-between">
           <div className="flex">
