@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
 import { v4 } from 'uuid';
@@ -42,7 +43,17 @@ export function CategoryChooseMenu(props: CategoryChooseMenu) {
       <h4 className="text-base font-bold uppercase">Categorie</h4>
       <ul>
         {props.categoryList.map((elem, i) => {
-          return <li key={i}>{elem}</li>;
+          return (
+            <li
+              className={classNames(
+                'cursor-pointer my-2',
+                i === 0 ? 'text-indigo-600' : 'transform translate-x-4',
+              )}
+              key={i}
+            >
+              {elem}
+            </li>
+          );
         })}
       </ul>
     </div>
