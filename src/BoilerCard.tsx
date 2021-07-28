@@ -67,7 +67,7 @@ export function BoilerCard(props: BoilerCard) {
             props.discount ? 'visible' : 'invisible',
           )}
         >
-          <p>Risparmi il 20%</p>
+          <p>Risparmi il {props.discountAmount}%</p>
         </div>
         <div className="flex-grow"></div>
         <svg
