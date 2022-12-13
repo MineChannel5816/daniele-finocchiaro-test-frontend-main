@@ -6,17 +6,16 @@ import { v4 } from 'uuid';
 
 import './App.css';
 
-import 'normalize.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-
-import faker from 'faker';
 
 import boiler from './assets/boiler.png';
 
 import { Pagination } from './Pagination';
 
 import { SideBar } from './SideBar';
+
+import { faker } from '@faker-js/faker';
 
 import { Footer } from './Footer';
 
@@ -49,7 +48,7 @@ function generateData() {
   const BoilerInfo: BoilerInfo[] = new Array(60).fill({}).map(() => {
     let prod = faker.commerce.product();
     let prodDesc = prod + ' ' + faker.lorem.words();
-    let discount = faker.random.boolean();
+    let discount = faker.datatype.boolean();
 
     let location = ['ext', 'int', 'ext/int'];
     let powerType = ['electric', 'methane'];
@@ -62,20 +61,20 @@ function generateData() {
       discount: discount,
       id: v4(),
       imageSrc: boiler,
-      installation: faker.random.boolean(),
-      locationType: location[faker.random.number({ min: 0, max: 2 })],
+      installation: faker.datatype.boolean(),
+      locationType: location[faker.datatype.number({ min: 0, max: 2 })],
       price: Number(faker.finance.amount(620)),
-      numberStar: faker.random.number({ min: 1, max: 5 }),
-      power: faker.random.number({ min: 19, max: 34, precision: 0.5 }),
-      powerType: powerType[faker.random.number({ min: 0, max: 1 })],
-      tipology: tipology[faker.random.number({ min: 0, max: 2 })],
-      available: faker.random.boolean(),
+      numberStar: faker.datatype.number({ min: 1, max: 5 }),
+      power: faker.datatype.number({ min: 19, max: 34, precision: 0.5 }),
+      powerType: powerType[faker.datatype.number({ min: 0, max: 1 })],
+      tipology: tipology[faker.datatype.number({ min: 0, max: 2 })],
+      available: faker.datatype.boolean(),
     };
     if (discount) {
       generate = {
         ...generate,
         oldPrice: Number(faker.finance.amount(620, generate.price)),
-        discountAmount: faker.random.number({ min: 10, max: 70 }),
+        discountAmount: faker.datatype.number({ min: 10, max: 70 }),
       };
     }
     return generate;
